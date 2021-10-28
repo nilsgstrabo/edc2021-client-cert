@@ -10,6 +10,9 @@ spec:
     - name: test
       build:
         from: TEST
+    - name: qa
+      build:
+        from: QA
     - name: prod
       build:
         from: release
@@ -36,5 +39,7 @@ spec:
           authentication:
             clientCertificate:
               verification: "optional_no_ca"
-
-      
+        - environment: qa
+          authentication:
+            clientCertificate:
+              verification: "optional"
