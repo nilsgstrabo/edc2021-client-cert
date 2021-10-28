@@ -2,7 +2,7 @@ using System;
 
 namespace api
 {
-    public class WeatherForecast
+    public class Data
     {
         public DateTime Date { get; set; }
 
