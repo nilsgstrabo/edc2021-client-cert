@@ -4,16 +4,16 @@ metadata:
   name: edc2021-radix-client-cert
 spec:
   environments:
-    - name: dev
+    - name: "off"
       build:
         from: main
-    - name: test
+    - name: optional_no_ca
       build:
         from: TEST
-    - name: qa
+    - name: optional
       build:
         from: QA
-    - name: prod
+    - name: "on"
       build:
         from: release
   components:
@@ -30,16 +30,16 @@ spec:
       variables:
         ASPNETCORE_URLS: "http://*:5000"
       environmentConfig:
-        - environment: dev
+        - environment: "off"
           authentication:
             clientCertificate:
               verification: "off"
               passCertificateToUpstream: false
-        - environment: test
+        - environment: optional_no_ca
           authentication:
             clientCertificate:
               verification: "optional_no_ca"
-        - environment: qa
+        - environment: optional
           authentication:
             clientCertificate:
               verification: "optional"
