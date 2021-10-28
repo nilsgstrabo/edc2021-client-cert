@@ -1,0 +1,39 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: edc2021-radix-client-cert
+spec:
+  environments:
+    - name: dev
+      build:
+        from: main
+    - name: test
+      build:
+        from: TEST
+    - name: prod
+      build:
+        from: release
+  components:
+    - name: api
+      src: api
+      ports:
+        - name: http
+          port: 5000
+      publicPort: http
+      authentication:
+        clientCertificate:
+          verification: "on"
+          passCertificateToUpstream: true
+      variables:
+        ASPNETCORE_URLS: "http://*:5000"
+      environmentConfig:
+        - environment: dev
+          authentication:
+            clientCertificate:
+              verification: "off"
+        - environment: test
+          authentication:
+            clientCertificate:
+              verification: "optional_no_ca"
+
+      
