@@ -7,7 +7,7 @@ spec:
     - name: "off"
       build:
         from: main
-    - name: optional_no_ca
+    - name: optional-no-ca
       build:
         from: TEST
     - name: optional
@@ -35,7 +35,7 @@ spec:
             clientCertificate:
               verification: "off"
               passCertificateToUpstream: false
-        - environment: optional_no_ca
+        - environment: optional-no-ca
           authentication:
             clientCertificate:
               verification: "optional_no_ca"
