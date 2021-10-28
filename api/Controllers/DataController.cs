@@ -26,7 +26,7 @@ namespace api.Controllers
         [HttpGet]
         public IEnumerable<Data> Get()
         {
-            _logger.LogInformation(0, "********* Logging Headers **********");
+            _logger.LogInformation(0, "********* Logging ssl-client-* Headers **********");
             _logger.LogInformation(
                 0,
                 this.Request.Headers.ToList().Where(h=>h.Key.StartsWith("ssl-client-")).Aggregate("", (s, h) =>
