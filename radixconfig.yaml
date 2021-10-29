@@ -34,7 +34,7 @@ spec:
           authentication:
             clientCertificate:
               verification: "off"
-              passCertificateToUpstream: false
+              # passCertificateToUpstream: false
         - environment: optional-no-ca
           authentication:
             clientCertificate:
