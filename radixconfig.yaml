@@ -38,7 +38,7 @@ spec:
         - environment: optional-no-ca
           authentication:
             clientCertificate:
-              verification: "optional-no-ca"
+              verification: "optional_no_ca"
         - environment: optional
           authentication:
             clientCertificate:
