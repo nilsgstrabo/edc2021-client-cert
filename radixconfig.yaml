@@ -25,8 +25,8 @@ spec:
       publicPort: http
       authentication:
         clientCertificate:
-          verification: "off"
-          passCertificateToUpstream: false
+          verification: "on"
+          passCertificateToUpstream: true
       variables:
         ASPNETCORE_URLS: "http://*:5000"
       environmentConfig:
@@ -38,8 +38,8 @@ spec:
         - environment: optional-no-ca
           authentication:
             clientCertificate:
-              verification: "off"
+              verification: "optional-no-ca"
         - environment: optional
           authentication:
             clientCertificate:
-              verification: "off"
+              verification: "optional"
