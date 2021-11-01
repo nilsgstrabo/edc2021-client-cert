@@ -2,7 +2,7 @@
 
 Demonstrate how to configure client certificate authentication in Radix
 
-# Create self signed CA and certificate
+## Create self signed CA and certificate
 
 https://campus.barracuda.com/product/webapplicationfirewall/doc/12193120/creating-a-client-certificate/
 
