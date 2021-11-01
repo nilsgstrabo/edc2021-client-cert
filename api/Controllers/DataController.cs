@@ -34,14 +34,7 @@ namespace api.Controllers
                     if (h.Key == "ssl-client-cert")
                     {
                         var unescapedString = Uri.UnescapeDataString(h.Value);
-                        _logger.LogInformation(0, "ssl-client-cert unescaped:" + unescapedString);
-                        // var unescapedBytes = System.Text.Encoding.UTF8.GetBytes(unescapedString);
-                        // var unescapedBase64 = Convert.ToBase64String(unescapedBytes);
-                        // _logger.LogInformation(0, "ssl-client-cert unescaped:" + unescapedBase64);
-
-                        // var escapedBytes = System.Text.Encoding.UTF8.GetBytes(h.Value);
-                        // var escapedBase64 = Convert.ToBase64String(escapedBytes);
-                        // _logger.LogInformation(0, "ssl-client-cert original:" + escapedBase64);
+                        _logger.LogInformation(0, "ssl-client-cert unescaped:\n" + unescapedString);
                     }
                     return s + h.Key + ": " + h.Value.ToString() + Environment.NewLine;
                 })
