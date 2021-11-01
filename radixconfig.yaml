@@ -15,7 +15,7 @@ spec:
         from: QA
     - name: "on"
       build:
-        from: ON
+        from: PROD
   components:
     - name: api
       src: api
