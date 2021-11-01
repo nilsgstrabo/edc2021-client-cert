@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -35,6 +37,10 @@ namespace api.Controllers
                     {
                         var unescapedString = Uri.UnescapeDataString(h.Value);
                         _logger.LogInformation(0, "ssl-client-cert unescaped:\n" + unescapedString);
+
+                        using(var cert=new X509Certificate2(Encoding.ASCII.GetBytes(unescapedString))) {
+                            _logger.LogInformation("thumprint: " + cert.Thumbprint);
+                        }
                     }
                     return s + h.Key + ": " + h.Value.ToString() + Environment.NewLine;
                 })
