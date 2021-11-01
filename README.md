@@ -22,8 +22,11 @@ openssl x509 -req -in selfsigned-sergey-req.pem -days 1000 -CA selfsigned-ca-cer
 ### With no client certificate
 
 curl --request GET --url https://api-edc2021-radix-client-cert-off.playground.radix.equinor.com/data
+
 curl --request GET --url https://api-edc2021-radix-client-cert-optional-no-ca.playground.radix.equinor.com/data
+
 curl --request GET --url https://api-edc2021-radix-client-cert-optional.playground.radix.equinor.com/data
+
 curl --request GET --url https://api-edc2021-radix-client-cert-on.playground.radix.equinor.com/data
 
 ### As Nils
