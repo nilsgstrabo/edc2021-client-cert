@@ -46,6 +46,9 @@ curl --request GET --url https://api-edc2021-radix-client-cert-on.playground.rad
 ### Call API via APIM
 
 curl --request GET --url https://api-test.gateway.equinor.com/edc-radix-cert-nst/off/data
-curl --request GET --url https://api-test.gateway.equinor.com/edc-radix-cert-nst/optional-no-ca/data 
+
+curl --request GET --url https://api-test.gateway.equinor.com/edc-radix-cert-nst/optional-no-ca/data
+
 curl --request GET --url https://api-test.gateway.equinor.com/edc-radix-cert-nst/optional/data 
-curl --request GET --url https://api-test.gateway.equinor.com/edc-radix-cert-nst/on/data 
+
+curl --request GET --url https://api-test.gateway.equinor.com/edc-radix-cert-nst/on/data
